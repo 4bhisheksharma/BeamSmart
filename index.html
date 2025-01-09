@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Car Dashboard</h1>
+  <div>
+    <p id="lightState">Light State: --</p>
+    <p id="obstacleDistance">Obstacle Distance: -- cm</p>
+    <button id="toggleLight">Toggle Light</button>
+    <button id="forwardButton">Move Forward</button>
+    <button id="backwardButton">Move Backward</button>
+    <button id="leftButton">Turn Left</button>
+    <button id="rightButton">Turn Right</button>
+    <button id="stopButton">Stop</button>
+  </div>
+  
+  <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js"></script>  
+  <script src="script.js"></script>
+</body>
+</html>

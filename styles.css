@@ -1,0 +1,79 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* Heading Styles */
+  h1 {
+    font-size: 2.5rem;
+    color: #495057;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Dashboard Container */
+  div {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Paragraph Styles */
+  p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #495057;
+  }
+  
+  /* Button Styles */
+  button {
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    background: #003f88;
+    transform: scale(0.95);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    div {
+      padding: 15px 20px;
+    }
+  
+    button {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  
