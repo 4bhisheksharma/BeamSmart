@@ -1,7 +1,7 @@
 {
     "car": {
-        "lightState": "Normal Beam",
+        "lightState": "High Beam",
         "obstacleDistance": "0",
-        "command": ""
+        "command": "STOP"
     }
 }
