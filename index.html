@@ -12,15 +12,15 @@
     <h1>Beam Smart Control</h1>
     <div class="status">
       <p><strong>Light State:</strong> <span id="lightState">Loading...</span></p>
-      <p><strong>Obstacle Distance:</strong> <span id="obstacleDistance">Loading...</span></p>
+      <p><strong>Obstacle Distance:</strong> <span id="obstacleDistance">Loading...</span> cm</p>
     </div>
     <button id="toggleLight">Toggle Light</button>
     <div class="commands">
-      <button onclick="sendCommand('FORWARD')">Move Forward</button>
-      <button onclick="sendCommand('BACKWARD')">Move Backward</button>
-      <button onclick="sendCommand('RIGHT')">Move RIGHT</button>
-      <button onclick="sendCommand('LEFT')">Move LEFT</button>
-      <button onclick="sendCommand('STOP')">Stop</button>
+      <button id="forward">Move Forward</button>
+      <button id="backward">Move Backward</button>
+      <button id="right">Move Right</button>
+      <button id="left">Move Left</button>
+      <button id="stop">Stop</button>
     </div>
   </div>
 </body>
