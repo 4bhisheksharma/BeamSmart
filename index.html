@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Beam Smart Control</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js" defer></script>
 </head>
 <body>
-  <h1>Car Dashboard</h1>
-  <div>
-    <p id="lightState">Light State: --</p>
-    <p id="obstacleDistance">Obstacle Distance: -- cm</p>
+  <div class="container">
+    <h1>Beam Smart Control</h1>
+    <div class="status">
+      <p><strong>Light State:</strong> <span id="lightState">Loading...</span></p>
+      <p><strong>Obstacle Distance:</strong> <span id="obstacleDistance">Loading...</span></p>
+    </div>
     <button id="toggleLight">Toggle Light</button>
-    <button id="forwardButton">Move Forward</button>
-    <button id="backwardButton">Move Backward</button>
-    <button id="leftButton">Turn Left</button>
-    <button id="rightButton">Turn Right</button>
-    <button id="stopButton">Stop</button>
+    <div class="commands">
+      <button onclick="sendCommand('FORWARD')">Move Forward</button>
+      <button onclick="sendCommand('BACKWARD')">Move Backward</button>
+      <button onclick="sendCommand('RIGHT')">Move RIGHT</button>
+      <button onclick="sendCommand('LEFT')">Move LEFT</button>
+      <button onclick="sendCommand('STOP')">Stop</button>
+    </div>
   </div>
-  
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-  <script src="https://beamsmart-7b041-default-rtdb.firebaseio.com/"></script>
-  <script type="module" src="script.js"></script>
 </body>
 </html>

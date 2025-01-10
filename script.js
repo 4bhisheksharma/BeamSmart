@@ -1,4 +1,6 @@
-// Firebase Configuration
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+import { getDatabase, ref, onValue, set, get } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA4dgXXg-GO7M0w1gPI7xXF4JlsmcGJBT0",
@@ -12,8 +14,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
 // DOM Elements
 const lightStateElement = document.getElementById("lightState");
@@ -21,29 +23,30 @@ const obstacleDistanceElement = document.getElementById("obstacleDistance");
 const toggleLightButton = document.getElementById("toggleLight");
 
 // Realtime Database References
-const lightStateRef = db.ref("car/lightState");
-const obstacleDistanceRef = db.ref("car/obstacleDistance");
-const commandRef = db.ref("car/command");
+const lightStateRef = ref(db, "car/lightState");
+const obstacleDistanceRef = ref(db, "car/obstacleDistance");
+const commandRef = ref(db, "car/command");
 
 // Listen for updates
-lightStateRef.on("value", (snapshot) => {
-  lightStateElement.textContent = snapshot.val();
+onValue(lightStateRef, (snapshot) => {
+  const value = snapshot.val();
+  lightStateElement.textContent = value || "Unknown";
 });
 
-obstacleDistanceRef.on("value", (snapshot) => {
-  obstacleDistanceElement.textContent = snapshot.val();
+onValue(obstacleDistanceRef, (snapshot) => {
+  const value = snapshot.val();
+  obstacleDistanceElement.textContent = value || "Unknown";
 });
 
 // Toggle Light State
 toggleLightButton.addEventListener("click", async () => {
-  lightStateRef.once("value", (snapshot) => {
-    const currentState = snapshot.val();
-    const newState = currentState === "Normal Beam" ? "Low Beam" : "Normal Beam";
-    lightStateRef.set(newState);
-  });
+  const currentStateSnapshot = await get(lightStateRef);
+  const currentState = currentStateSnapshot.val();
+  const newState = currentState === "Normal Beam" ? "Low Beam" : "Normal Beam";
+  set(lightStateRef, newState);
 });
 
 // Send car movement commands
-function sendCommand(command) {
-  commandRef.set(command);
-}
+window.sendCommand = function (command) {
+  set(commandRef, command);
+};
