@@ -4,23 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beam Smart Control</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  
   <script type="module" src="script.js" defer></script>
 </head>
 <body>
+  <div class="header">
+    <img src="Logo.png" alt="logo">
+  </div>
   <div class="container">
     <h1>Beam Smart Control</h1>
     <div class="status">
-      <p><strong>Light State:</strong> <span id="lightState">Loading...</span></p>
-      <p><strong>Obstacle Distance:</strong> <span id="obstacleDistance">Loading...</span> cm</p>
+      <p><strong>Light State: <span id="lightIcon"><i class="fas fa-lightbulb"></i></span</i></strong> <span id="lightState"> Loading...</span></p>
+      <p><strong>Obstacle Distance:<span id="distanceIcon"><i class="fas fa-ruler"></i></span></strong> <span id="obstacleDistance"> Loading...</span> cm</p>
     </div>
-    <div class="commands">
-      <button onclick="sendCommand('FORWARD')">Move Forward</button>
-      <button onclick="sendCommand('BACKWARD')">Move Backward</button>
-      <button onclick="sendCommand('RIGHT')">Move RIGHT</button>
-      <button onclick="sendCommand('LEFT')">Move LEFT</button>
-      <button onclick="sendCommand('STOP')">Stop</button>
-    </div>
-  </div>
+    
+        <div class="commands">
+          <button onclick="sendCommand('FORWARD')"><i class="fas fa-arrow-up"></i></button>
+          <button onclick="sendCommand('BACKWARD')"><i class="fas fa-arrow-down"></i></button>
+          <button onclick="sendCommand('RIGHT')"><i class="fas fa-arrow-right"></i></button>
+          <button onclick="sendCommand('LEFT')"><i class="fas fa-arrow-left"></i></button>
+          <button onclick="sendCommand('STOP')"><i class="fas fa-stop-circle"></i></button>
+        </div>
+      </div> 
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-about">
+            <p>&copy; 2025 Beam Smart. All Rights Reserved.</p>
+          </div>
+          <div class="footer-social">
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
+      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
